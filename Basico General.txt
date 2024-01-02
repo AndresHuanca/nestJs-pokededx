@@ -1,0 +1,121 @@
+Create project
+yarn create vite
+vanilla-typescript
+
+yarn start:dev
+
+install dependecies
+yarn 
+run project
+yarn dev
+
+yarn add uuid
+yarn add -D @types/uuid
+
+yarn add class-validator class-transformer
+
+para crear un crud completo
+nest g resource brands --no-spec
+
+quitar pretier
+yarn remove prettier
+--------------------------------------------
+create a new project
+nest new pokedex
+yarn
+borrar spec del src
+borrar app controller
+borar el app service
+
+actualizar app.module
+yarn remove prettier
+yarn remove eslint-config-prettier
+yarn remove eslint-plugin-prettier
+
+para restet VS code
+ctrl + shi p = reload window
+
+yarn start:dev
+
+create folder public and content
+Servir contenido estático: crear directorio public
+yarn add @nestjs/serve-static
+Colocar segun el contexto en ap.module en imports
+@Module({
+ imports: [
+ ServeStaticModule.forRoot({
+ rootPath: join(__dirname,’..’,’public’),
+ })
+ ],
+})
+export class AppModule {}
+
+si es un module generalmente va en el import 
+nest g res pokemon --no-spec
+RES API 
+Y
+Adema en main.ts se pued colocar partes del url globales
+ejemplo
+app.setGlobalPrefic('api/v2')
+http://localhost:3000/api/v2/pokemon/(postman)
+
+crear dokker compose
+un archivo en la raiz
+docker-compose.yaml
+
+- 27018 computadora: 27017 de mi contenedor
+
+version: '3'
+
+services:
+  db:
+    image: mongo:5
+    restart: always
+    ports:
+      - 27018:27017
+    environment:
+      MONGODB_DATABASE: nest-pokemon
+    volumes:
+      - ./mongo:/data/db
+
+
+
+correr base de datos de docker-tambien para inicializar si elimino de docker destock
+docker-compose up -d 
+
+configurar conexion en table plus 
+mongodb://localhost/nest-pokemon
+realizar test de prueba 
+debe estar corriendo en docker
+
+Intalacioens extras de mongo
+yarn add @nestjs/mongoose mongoose
+
+configurar en el app.module
+ MongooseModule.forRoot('mongodb://localhost:27018/nest-pokemon'),
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
